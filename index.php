@@ -1,22 +1,38 @@
 <?php
 
+//VARIABLE SCOPES
+ //local Variable
+
+ function myFunc(){
+     $price = 12;
+     echo $price;
+ }
+
+ //myFunc();
+
+ //echo $price; //gives an error because its not within the scope
+
+ function myFuncTwo($age){
+     echo $age;
+ }
+//myFuncTwo(23);
 
 
-//functions
+//global variables
+ $name = 'Ronald';
+// function myName(){
+//     global $name;
+//     $name = 'Joca';
+//     echo "hello $name";
+// }
+// myName();
 
-function sayHello($name = 'gypsies', $time = 'night'){
-    echo "good $time $name";
+function myTitan(&$name){
+    $name = 'jocatins';
+    echo "hello $name" . '<br/>';
 }
-sayHello('titans');
-
-function formatProduct($product){
-
-    //echo " {$product['name']} costs #{$product['price']} to buy <br/> ";
-    return " {$product['name']} costs #{$product['price']} to buy <br/> ";
-}
-
-// $formatted =  formatProduct(['name' => 'gold-star', 'price' => 40]);
-// echo $formatted;
+myTitan($name);
+echo $name;
 
 ?>
 <!DOCTYPE html>
