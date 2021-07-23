@@ -2,16 +2,35 @@
 
 $name= "Sphinx PHP";
 
-//loops
+//comparison booleans 
+// echo true;
+// echo 'gypsy' < 'titan';
+// echo 'gypsy' > 'Gypsy';
+// echo 'gypsy' == 'Gypsy';
 
-$titans = ['sphinx', 'joca', 'calvin'];
 
-// for($i = 0; $i < count($titans); $i++){
-//     echo $titans[$i]. '<br/>';
+//loose vs strict equal comparison
+//loose comparison does not take the data type into consideration
+//echo 14 == '14'; //returns true
+//echo 14 === '14';
+
+//echo true == '1';
+//echo false == '';
+
+//conditional statements
+
+// $price = 90;
+
+// if ($price > 800){
+//     echo 'the condition is met';
+// }elseif( $price = 90){
+//     echo 'else if condition';
 // }
-// forEach($titans as $titan){
-//     echo $titan . '<br/>';
+
+// else {
+//     echo 'Oops not exist';
 // }
+
 
 $products = [
     ['name' => 'shiny star', 'price' => 20],
@@ -22,21 +41,15 @@ $products = [
     ['name' => 'banana skin', 'price' => 2]
 ];
 
-//forEach loop
-
-// forEach($products as $product){
-//     echo $product['name']. '-'.$product['price'];
-//     echo '<br/>';
+// foreach($products as $product){
+//     if($product['price'] < 15 && $product['price'] > 2 ){
+//         echo $product['name'] . '<br/>';
+//     }
 // }
-
-
-//while loop
-
-// $i = 0;
-// while($i < count($products)){
-//     echo $products[$i]['name'];
-//     echo '<br/>';
-//     $i++;
+// foreach($products as $product){
+//     if($product['price'] > 20 || $product['price'] <10  ){
+//         echo $product['name'] . '<br/>';
+//     }
 // }
 
 ?>
@@ -54,12 +67,11 @@ $products = [
         
     </h1>
     <div>
-        <h1>Titans</h1>
         <ul>
-            <?php foreach($products as $product){ ?>
-
-                <h2><?php echo $product['name']; ?> </h2>
-                <h3> <?php echo $product['price']; ?> </h3>
+            <?php forEach($products as $product){ ?>
+                <?php if($product['price'] > 15 ) { ?>
+                    <li> <?php echo $product['name']; ?> </li>
+                    <?php }?>
                 <?php }?>
         </ul>
     </div>
