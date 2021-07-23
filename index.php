@@ -1,28 +1,22 @@
 <?php
 
-$name= "Sphinx PHP";
 
-$products = [
-    ['name' => 'shiny star', 'price' => 20],
-    ['name' => 'green shell', 'price' => 10],
-    ['name' => 'red shell', 'price' => 15],
-    ['name' => 'gold coin', 'price' => 5],
-    ['name' => 'lightning bolt', 'price' => 40],
-    ['name' => 'banana skin', 'price' => 2]
-];
 
-foreach($products as $product){
-    if($product['name']=== 'gold coin'){
-        break;
-    }
-    
-    if($product['price'] > 15){
-        continue;
-    }
-    echo $product['name'] . '<br/>';
-    echo $product['price'] . '<br/>';
+//functions
+
+function sayHello($name = 'gypsies', $time = 'night'){
+    echo "good $time $name";
+}
+sayHello('titans');
+
+function formatProduct($product){
+
+    //echo " {$product['name']} costs #{$product['price']} to buy <br/> ";
+    return " {$product['name']} costs #{$product['price']} to buy <br/> ";
 }
 
+// $formatted =  formatProduct(['name' => 'gold-star', 'price' => 40]);
+// echo $formatted;
 
 ?>
 <!DOCTYPE html>
@@ -34,10 +28,7 @@ foreach($products as $product){
     <title>PHP tutorials</title>
 </head>
 <body>
-    <h1>
-        <?php echo $name; ?>
-        
-    </h1>
+   
    
 </body>
 </html>
