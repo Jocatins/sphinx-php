@@ -1,73 +1,43 @@
 <?php
- $name = 'hello titans ';
- $name2 = 'and gypsies';
 
- $radius = 25;
- $pi = 3.142;
-//  echo 'Hello php, just testing you $name';
+$name= "Sphinx PHP";
 
-// echo "let us escape characters \"here\"";
+//loops
 
-// echo 'We can also escape characters using single quotes "like this"';
+$titans = ['sphinx', 'joca', 'calvin'];
 
-// echo $name[3];
+// for($i = 0; $i < count($titans); $i++){
+//     echo $titans[$i]. '<br/>';
+// }
+// forEach($titans as $titan){
+//     echo $titan . '<br/>';
+// }
 
-// echo strlen($name2);
-
-// echo strtoupper($name);
-
-// echo str_replace('hello', 'greetings', $name);
-
-//basic operators - * ** - + /
-
-// echo $pi * $radius **2;
-
-// echo floor($pi);
-
-// echo ceil($pi);
-
-//indexed arrays
-
-$rookie = array('Tim', 'Philips');
-// echo $rookie[1];
-
-$titanNum = [394, 90, 78, 69];
-// print_r($titanNum);
-// $titanNum[] = 12;
-// print_r($titanNum);
-
-// array_push($titanNum, 890);
-
-// $gypsyNum = array_merge($rookie, $titanNum);
-// print_r($gypsyNum);
-
-//associative arrays (key & value pairs)
-// $titanOne = ['joca'=>'php', 'nico'=>'java', 'leo'=>'python' ];
-// print_r($titanOne);
-
-// $titanTwo = array('joca'=>'php', 'nico'=>'java', 'leo'=>'python', 'owes'=>'db');
-// $titanTwo['louis']='angular';
-
-// print_r($titanTwo);
-
-// echo count($titanTwo);
-
-//multi dimensional arrays
-
-$titans = [
-    [ 'title'=>'gypsy', 'number'=>56, 'area'=>'player', 'field'=>'coder'],
-    [ 'title'=>'gypsy', 'number'=>56, 'area'=>'player', 'field'=>'coder'],
-    [ 'title'=>'sphinx','number'=> 56,'area'=> 'player','field'=> 'coder']
+$products = [
+    ['name' => 'shiny star', 'price' => 20],
+    ['name' => 'green shell', 'price' => 10],
+    ['name' => 'red shell', 'price' => 15],
+    ['name' => 'gold coin', 'price' => 5],
+    ['name' => 'lightning bolt', 'price' => 40],
+    ['name' => 'banana skin', 'price' => 2]
 ];
 
-//print_r($titans[1][2]);
-//echo $titans[2]['field'];
-// echo count($titans);
+//forEach loop
 
-$titans[] = ['title'=>'joca', 'number'=>99, 'area'=>'player', 'field'=>'devops'];
-//print_r($titans);
-$popped = array_pop($titans);
-print_r($popped);
+// forEach($products as $product){
+//     echo $product['name']. '-'.$product['price'];
+//     echo '<br/>';
+// }
+
+
+//while loop
+
+// $i = 0;
+// while($i < count($products)){
+//     echo $products[$i]['name'];
+//     echo '<br/>';
+//     $i++;
+// }
 
 ?>
 <!DOCTYPE html>
@@ -83,5 +53,15 @@ print_r($popped);
         <?php echo $name; ?>
         
     </h1>
+    <div>
+        <h1>Titans</h1>
+        <ul>
+            <?php foreach($products as $product){ ?>
+
+                <h2><?php echo $product['name']; ?> </h2>
+                <h3> <?php echo $product['price']; ?> </h3>
+                <?php }?>
+        </ul>
+    </div>
 </body>
 </html>
