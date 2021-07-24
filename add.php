@@ -1,5 +1,9 @@
 <?php 
 
+// Data-tables
+// each row represents an individual record in the table
+// each column represents a property on the record
+
 $title = $email = $ingredients = '';
 
 $errors = array('email'=>'', 'title'=>'', 'ingredients'=>'');
