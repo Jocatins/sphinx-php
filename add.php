@@ -1,16 +1,28 @@
 <?php 
 
-// if(isset($_GET['submit'])){
-//     echo $_GET['email'];
-//     echo $_GET['title'];
-//     echo $_GET['ingredients'];
-// }
+
 
 if(isset($_POST['submit'])){
-    echo $_POST['email'];
-    echo $_POST['title'];
-    echo $_POST['ingredients'];
-}
+
+    //check email
+    if(empty($_POST['email'])){
+        echo 'A valid mail is required' . '<br/>';
+    }else {
+        echo htmlspecialchars($_POST['email']);
+    }
+    //check title
+    if(empty($_POST['title'])){
+        echo 'A valid title is required' . '<br/>';
+    }else {
+        echo htmlspecialchars($_POST['title']);
+    }
+    //check ingredients
+    if(empty($_POST['ingredients'])){
+        echo 'A valid ingredient is required' . '<br/>';
+    }else {
+        echo htmlspecialchars($_POST['ingredients']);
+    }
+} //end of POST check
 
 ?>
 
