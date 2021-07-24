@@ -1,39 +1,13 @@
 <?php
 
-//VARIABLE SCOPES
- //local Variable
+// include('titans.php');
+// require('titans.php');
 
- function myFunc(){
-     $price = 12;
-     echo $price;
- }
+include 'titans.php';
+require 'titans.php';
 
- //myFunc();
-
- //echo $price; //gives an error because its not within the scope
-
- function myFuncTwo($age){
-     echo $age;
- }
-//myFuncTwo(23);
-
-
-//global variables
- $name = 'Ronald';
-// function myName(){
-//     global $name;
-//     $name = 'Joca';
-//     echo "hello $name";
-// }
-// myName();
-
-function myTitan(&$name){
-    $name = 'jocatins';
-    echo "hello $name" . '<br/>';
-}
-myTitan($name);
-echo $name;
-
+echo 'end of code';
+ 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,6 +19,8 @@ echo $name;
 </head>
 <body>
    
+
+    <?php echo include('content.php'); ?>
    
 </body>
 </html>
