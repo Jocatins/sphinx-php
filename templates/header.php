@@ -7,12 +7,11 @@ session_start();
 
 if ($_SERVER['QUERY_STRING'] == 'noname') {
 	// unset a single session variable
-	//unset($_SESSION['name']);
-
-	session_unset();
+	unset($_SESSION['name']);
 }
+// Null Coalescing
 
-$name = $_SESSION['name'];
+$name = $_SESSION['name'] ?? 'Guest';
 ?>
 
 
