@@ -1,17 +1,37 @@
 <?php
 
-if (isset($_POST['submit'])) {
+// $quotes = readfile("readme.txt");
+// echo $quotes;
 
-    //cookie for gender
-    setcookie('gender', $_POST['gender'], time() + 86400);
+$file = 'readme.txt';
 
-    session_start();
+if (file_exists($file)) {
 
-    $_SESSION['name'] = $_POST['name'];
+    // read file
+    echo readfile($file) . '<br />';
 
-    header('Location: index.php');
+    // copy file
+    copy($file, 'quotes.txt');
+
+    // absolute path
+    echo realpath($file) . '<br />';
+
+    // file size
+    echo filesize($file) . '<br />';
+
+    // rename the file
+    rename($file, 'test.txt');
+} else {
+    echo 'file does not exist';
 }
+
+// make directory
+mkdir('quotes');
+
+
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,14 +43,11 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
-        <input type="text" name="name">
-        <select name="gender">
-            <option value="male">male</option>
-            <option value="female">female</option>
-        </select>
-        <input type="submit" name="submit" value="submit">
-    </form>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Similique repellat vero deleniti laudantium reprehenderit
+    distinctio nemo quaerat, provident, nam voluptatum necessitatibus
+    sequi praesentium officia ullam saepe explicabo asperiores quisquam
+    ab!
 </body>
 
 </html>
