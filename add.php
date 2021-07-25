@@ -1,8 +1,6 @@
 <?php 
 
-// Data-tables
-// each row represents an individual record in the table
-// each column represents a property on the record
+include('config/db_connect.php');
 
 $title = $email = $ingredients = '';
 
@@ -42,9 +40,26 @@ if(isset($_POST['submit'])){
     if(array_filter($errors)){
        // echo 'errors in the form';
     }else{
-       // echo 'form is valid';
-       header('Location: index.php');
+
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $title = mysqli_real_escape_string($conn, $_POST['title']);
+    $ingredients = mysqli_real_escape_string($conn, $_POST['ingredients']);
+
+    //inserting data into the table
+    $sql = 
+    "INSERT INTO pizzas(title, email, ingredients) VALUES ('$title', '$email', '$ingredients')";
+    //save data and check if its working
+    if(mysqli_query($conn, $sql)){
+        //success
+        header('Location: index.php');
+    }else {
+        //error catch
+        echo 'query error : '. mysqli_error($conn);
     }
+  
+    
+  
+}
 } //end of POST check
 
 ?>
