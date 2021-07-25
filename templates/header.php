@@ -1,3 +1,21 @@
+<?php
+//Whenever you are accessing the session variable, you call session_start() 
+
+session_start();
+
+//$_SESSION['name'] = 'mario';
+
+if ($_SERVER['QUERY_STRING'] == 'noname') {
+	// unset a single session variable
+	//unset($_SESSION['name']);
+
+	session_unset();
+}
+
+$name = $_SESSION['name'];
+?>
+
+
 <head>
 	<title>Titan Pizzas</title>
 	<!-- Compiled and minified CSS -->
@@ -32,6 +50,7 @@
 		<div class="container">
 			<a href="index.php" class="brand-logo brand-text">Titan Pizzas</a>
 			<ul id="nav-mobile" class="right hide-on-small-and-down">
+				<li class="grey-text">Hello <?php echo htmlspecialchars($name); ?></li>
 				<li><a href="add.php" class="btn brand z-depth-0">Add a Pizza</a></li>
 			</ul>
 		</div>

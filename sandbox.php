@@ -1,20 +1,13 @@
 <?php
 
-//ternary operators
-$score = 50;
+if (isset($_POST['submit'])) {
 
-// if($score > 40){
-//     echo 'high score';
-// }else {
-//     echo 'low score';
-// }
+    session_start();
 
-//ternary
+    $_SESSION['name'] = $_POST['name'];
 
-// $val = $score > 40 ? 'high score' : 'low score';
-// echo $val;
-
-echo $score > 40 ? 'high score' : 'low score';
+    header('Location: index.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,9 +20,10 @@ echo $score > 40 ? 'high score' : 'low score';
 </head>
 
 <body>
-    <p>
-        <?php echo $score > 40 ? 'high score' : 'low score'; ?>
-    </p>
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+        <input type="text" name="name">
+        <input type="submit" name="submit" value="submit">
+    </form>
 </body>
 
 </html>
