@@ -1,53 +1,30 @@
 <?php
 
-// $quotes = readfile("readme.txt");
-// echo $quotes;
+	class User {
 
-$file = 'readme.txt';
+		public $email;
+		public $name;
 
-if (file_exists($file)) {
+		public function __construct($name, $email){
+			// $this->name = 'mario';
+			// $this->email = 'mario@thenetninja.co.uk';
+			$this->name = $name;
+			$this->email = $email;
+		}
 
-    // read file
-    echo readfile($file) . '<br />';
+		public function login(){
+			// echo 'the user logged in';
+			echo $this->name . ' logged in';
+		}
 
-    // copy file
-    copy($file, 'quotes.txt');
+	}
 
-    // absolute path
-    echo realpath($file) . '<br />';
+	// $userOne = new User();
+	
+	// $userOne->login();
+	// echo $userOne->name;
 
-    // file size
-    echo filesize($file) . '<br />';
+	$userTwo = new User('yoshi', 'yoshi@thenetninja.co.uk');
 
-    // rename the file
-    rename($file, 'test.txt');
-} else {
-    echo 'file does not exist';
-}
-
-// make directory
-mkdir('quotes');
-
-
-
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    Similique repellat vero deleniti laudantium reprehenderit
-    distinctio nemo quaerat, provident, nam voluptatum necessitatibus
-    sequi praesentium officia ullam saepe explicabo asperiores quisquam
-    ab!
-</body>
-
-</html>
+	// echo $userTwo->email;
+	$userTwo->login();

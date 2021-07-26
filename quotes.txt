@@ -1,5 +1,5 @@
 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    Similique repellat vero deleniti laudantium reprehenderit
-    distinctio nemo quaerat, provident, nam voluptatum necessitatibus
-    sequi praesentium officia ullam saepe explicabo asperiores quisquam
-    ab!
+Similique repellat vero deleniti laudantium reprehenderit
+distinctio nemo quaerat, provident, nam voluptatum necessitatibus
+sequi praesentium officia ullam saepe explicabo asperiores quisquam
+ab!
